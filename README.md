@@ -21,7 +21,7 @@ $ cd mecab-ipadic-neologd
 $ ./bin/install-mecab-ipadic-neologd -n
 ```
 
-- CRF++ <span id="a1">[¹](#1)</span>
+- CRF++
 
 ```shell
 $ brew install wget
@@ -33,7 +33,7 @@ $ make
 $ sudo make install
 ```
 
-- CaboCha
+- CaboCha <span id="a1">[¹](#1)</span>
 
 ```shell
 $ FILE_ID=0B4y35FiV1wh7SDd1Q1dUQkZQaUU
