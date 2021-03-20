@@ -52,7 +52,7 @@ $ sudo python3 setup.py build_ext
 $ sudo python3 setup.py install
 ```
 
-- Sentiment Dictionaly <span id="a2">[²](#2)</span>
+- Sentiment Dictionary <span id="a2">[²](#2)</span>
 
 ```
 /NLP $ mkdir NLP_lib/dict
