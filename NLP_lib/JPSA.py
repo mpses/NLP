@@ -6,7 +6,10 @@ import MeCab
 import CaboCha
 import os, sys, csv, subprocess, better_exceptions
 from collections import namedtuple, defaultdict
-from .preprocessing import preprocessing
+if __name__ == '__main__':
+    from preprocessing import preprocessing
+else:
+    from .preprocessing import preprocessing
 
 def path_an(abspath):
     base = os.path.dirname(os.path.abspath(__file__))
