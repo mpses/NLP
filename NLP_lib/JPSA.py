@@ -6,23 +6,27 @@ import MeCab
 import CaboCha
 import os, sys, csv, subprocess, better_exceptions
 from collections import namedtuple, defaultdict
-from preprocessing import preprocessing
+from .preprocessing import preprocessing
 
-def read_file_into_lines(file_name):
-    with open(file_name, "r") as f:
+def path_an(abspath):
+    base = os.path.dirname(os.path.abspath(__file__))
+    return os.path.normpath(os.path.join(base, abspath))
+
+def read_file_into_lines(file_name: "abspath"):
+    with open(path_an(file_name), "r") as f:
         return f.readlines()
 
 def import_inui_dict():
     polar_dict = defaultdict(lambda: 0)
 
     into_value = {"ポジ": 1, "ネガ": -1}
-    for l in read_file_into_lines("dict/wago.121808.pn"):
+    for l in read_file_into_lines("./dict/wago.121808.pn"):
         line_list = l.split("\t")
         polar_dict[line_list[1].split(" ")[0].strip()] = into_value[line_list[0][:2]]
 
     into_value = defaultdict(lambda: 0)
     into_value["p"], into_value["n"], into_value["e"] = 1, -1, 0
-    for l in read_file_into_lines("dict/pn.csv.m3.120408.trim"):
+    for l in read_file_into_lines("./dict/pn.csv.m3.120408.trim"):
         line_list = l.split("\t")
         polar_dict[line_list[0]] = into_value[line_list[1]]
     
